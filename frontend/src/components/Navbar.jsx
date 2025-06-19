@@ -79,9 +79,9 @@ const Navbar = () => {
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
                 <img 
-                  src="/images/Logos/logo1.png" 
+                  src="/images/Logos/white3.png" 
                   alt="pickles Logo" 
-                  className="h-14 w-auto transition-transform duration-300 hover:scale-105"
+                  className="h-14 md:h-15 w-auto transition-transform duration-250 hover:scale-105"
                 />
                <span className="text-xl font-bold text-green-300 ml-3">Vin2Grow</span>
               </Link>
