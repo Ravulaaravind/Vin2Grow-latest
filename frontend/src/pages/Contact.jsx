@@ -10,8 +10,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      content: '+91 9701555435',
-      link: 'tel:+919701555435'
+      content: '+91 7207711919',
+      link: 'tel:+917207711919'
     },
     {
       icon: (
@@ -19,9 +19,9 @@ const Contact = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      title: 'Email',
-      content: 'maanmanuchulur@gmail.com',
-      link: 'mailto:maanmanuchulur@gmail.com'
+       title: 'Email',
+      content: 'vintogrow2@gmail.com',
+      link: 'mailto:vintogrow2@gmail.com'
     },
     {
       icon: (
@@ -31,7 +31,7 @@ const Contact = () => {
         </svg>
       ),
       title: 'Address',
-      content: '4-7-62/2, Shivaji nagar, Attapur, Hyderabad-500048',
+      content: '5-4-/3',
       link: 'https://maps.app.goo.gl/BV9XeQPSCLEXyyky7'
     },
     {
@@ -40,9 +40,9 @@ const Contact = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
       ),
-      title: 'WhatsApp',
+    title: 'WhatsApp',
       content: 'Chat with us on WhatsApp',
-      link: 'https://wa.me/919701555435'
+      link: 'https://wa.me/7207711919'
     }
   ];
 
