@@ -31,7 +31,7 @@ const generateResetToken = () => {
 };
 
 // Send reset password email
-const sendResetPasswordEmail = async (email, type, resetToken = null) => {
+const sendResetPasswordEmail = async (email, type, resetToken = null, customBaseUrl = null) => {
     try {
         if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
             throw new Error('Email configuration is missing');
@@ -40,10 +40,11 @@ const sendResetPasswordEmail = async (email, type, resetToken = null) => {
         let subject, html;
         
         if (type === 'reset_request') {
-            if (!process.env.FRONTEND_URL) {
+            const baseUrl = customBaseUrl || process.env.FRONTEND_URL;
+            if (!baseUrl) {
                 throw new Error('Frontend URL is not configured');
             }
-            const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}`;
+            const resetLink = `${baseUrl}/reset-password?token=${resetToken}`;
             subject = 'Reset Your Password';
             html = `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
