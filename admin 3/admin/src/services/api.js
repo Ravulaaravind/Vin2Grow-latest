@@ -44,6 +44,8 @@ const adminApi = {
     login: (credentials) => api.post('/api/auth/login', credentials),
     logout: () => api.post('/api/auth/logout'),
     getProfile: () => api.get('/api/users/profile'),
+    forgotPassword: ({ email }) => api.post('/api/auth/forgot-password', { email }),
+    resetPassword: ({ token, password }) => api.post('/api/auth/reset-password', { token, newPassword: password }),
   },
 
   // Users
