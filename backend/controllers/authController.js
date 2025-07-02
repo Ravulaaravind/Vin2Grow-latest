@@ -163,6 +163,12 @@ exports.forgotPassword = async (req, res) => {
       return res.status(404).json({ error: 'User not found' });
     }
 
+    // Determine which frontend URL to use for the reset link
+    let resetBaseUrl = process.env.FRONTEND_URL;
+    if (user.role === 'admin' && process.env.ADMIN_FRONTEND_URL) {
+      resetBaseUrl = process.env.ADMIN_FRONTEND_URL;
+    }
+
     console.log('Generating reset token for user:', user._id);
     // Generate reset token
     const resetToken = generateResetToken();
@@ -175,7 +181,7 @@ exports.forgotPassword = async (req, res) => {
     try {
       console.log('Attempting to send reset email to:', email);
       // Send reset password email
-      await sendResetPasswordEmail(email, 'reset_request', resetToken);
+      await sendResetPasswordEmail(email, 'reset_request', resetToken, resetBaseUrl);
       console.log('Reset email sent successfully');
       res.json({ 
         message: 'Password reset link sent to your email',
