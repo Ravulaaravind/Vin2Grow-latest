@@ -51,20 +51,6 @@ const TermsAndConditions = () => {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-100 mb-4">5. Shipping and Delivery</h2>
-          <p className="text-gray-300 leading-relaxed">
-            Please refer to our <Link to="/shipping-policy" className="text-green-400 hover:underline">Shipping Policy</Link> for detailed information regarding shipping methods, delivery times, and associated costs.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-100 mb-4">6. Returns and Refunds</h2>
-          <p className="text-gray-300 leading-relaxed">
-            Please note that all sales are final. Vin2Grow does not offer returns or refunds on any products sold through our Service.
-          </p>
-        </section>
-
-        <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-100 mb-4">7. Intellectual Property</h2>
           <p className="text-gray-300 leading-relaxed">
             All content on the Vin2Grow Service, including text, graphics, logos, images, product designs, and software, is the property of Vin2Grow or its content suppliers and protected by intellectual property laws. You may not use, reproduce, or distribute any content from the Service without our express written permission.
@@ -116,7 +102,7 @@ const TermsAndConditions = () => {
         <section>
           <h2 className="text-2xl font-semibold text-gray-100 mb-4">14. Contact Us</h2>
           <p className="text-gray-300 leading-relaxed">
-            If you have any questions about these Terms, please contact us at [Your Contact Email Address].
+            If you have any questions about these Terms, please contact us at <a href="mailto:vintogrow2@gmail.com" className="text-green-400 hover:underline">vintogrow2@gmail.com</a>.
           </p>
         </section>
       </div>
