@@ -124,8 +124,8 @@ const PrivacyPolicy = () => {
             If you have any questions about this Privacy Policy, please contact us:
           </p>
           <ul className="list-disc list-inside text-gray-300 leading-relaxed space-y-2 mt-2">
-            <li>By email: [Your Contact Email Address]</li>
-            <li>By visiting this page on our website: [Your Contact Page URL]</li>
+            <li>By email: <a href="mailto:vintogrow2@gmail.com" className="text-green-400 hover:underline">vintogrow2@gmail.com</a></li>
+            <li>By visiting this page on our website: <a href="/contact" className="text-green-400 hover:underline">Contact Us</a></li>
           </ul>
         </section>
       </div>
