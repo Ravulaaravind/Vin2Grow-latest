@@ -34,7 +34,7 @@ const RefundPolicy = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-100 mb-4">3. Damaged or Defective Products</h2>
           <p className="text-gray-300 leading-relaxed">
-            In the rare event that you receive a damaged or defective product, please contact our customer support team at [Your Contact Email Address] within <strong>48 hours</strong> of delivery. To facilitate the process, please provide:
+            In the rare event that you receive a damaged or defective product, please contact our customer support team within <strong>48 hours</strong> of delivery. To facilitate the process, please send your complaint and supporting photographs by <strong>email</strong> (vintogrow2@gmail.com) <strong>and WhatsApp</strong> (+91 7207711919). Please provide:
           </p>
           <ul className="list-disc list-inside text-gray-300 leading-relaxed space-y-2 mt-2">
             <li>Your order number.</li>
@@ -43,13 +43,6 @@ const RefundPolicy = () => {
           </ul>
           <p className="text-gray-300 leading-relaxed mt-2">
             Upon verification of the damage or defect, we will, at our discretion, offer a replacement of the same item (if available) or a store credit. Please note that we do not offer monetary refunds for damaged or defective items.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-100 mb-4">4. Cancellations</h2>
-          <p className="text-gray-300 leading-relaxed">
-            Users may have the option to cancel an order through their order page, provided the order has not yet been processed for delivery. Please note that **canceled orders are non-refundable.** We encourage users to carefully review their orders before confirming cancellation.
           </p>
         </section>
 
@@ -63,7 +56,7 @@ const RefundPolicy = () => {
         <section>
           <h2 className="text-2xl font-semibold text-gray-100 mb-4">6. Contact Us</h2>
           <p className="text-gray-300 leading-relaxed">
-            If you have any questions about our Refund Policy, please contact us at [Your Contact Email Address].
+            If you have any questions about our Refund Policy, please contact us at <a href="mailto:vintogrow2@gmail.com" className="text-green-400 hover:underline">vintogrow2@gmail.com</a>.
           </p>
         </section>
       </div>
