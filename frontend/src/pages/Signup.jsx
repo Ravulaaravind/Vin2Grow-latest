@@ -115,25 +115,26 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full p-8 space-y-6 bg-gray-800 rounded-xl shadow-lg border border-green-700">
         {/* Logo and Title */}
-        <div className="text-center">
+        <div className="text-center mb-6">
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
             <img
-              className="mx-auto h-16 w-auto"
-              // src="/images/logo.png"
-              // alt="Akshi Dairy"
+              className="mx-auto h-24 w-24 rounded-full border-4 border-green-500 p-2 bg-gray-900"
+              src="/images/Logos/white3.png" 
+              alt=""
             />
           </motion.div>
-          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Create your account</h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-100">Vin2Grow</h2>
+          <p className="mt-2 text-sm text-green-300">Create your account</p>
+          <p className="mt-2 text-sm text-gray-400">
             Already have an account?{' '}
-            <Link to="/login" className="font-medium text-primary-600 hover:text-primary-500">
+            <Link to="/login" className="font-medium text-green-400 hover:text-green-300">
               Sign in
             </Link>
           </p>
@@ -141,15 +142,15 @@ const Signup = () => {
 
         {/* Signup Form */}
         <motion.form
-          className="mt-8 space-y-6"
+          className="space-y-6"
           onSubmit={handleSubmit}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <div className="rounded-md shadow-sm space-y-4">
+          <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                 Full Name
               </label>
               <input
@@ -160,13 +161,13 @@ const Signup = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your full name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Email address
               </label>
               <input
@@ -177,13 +178,13 @@ const Signup = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
                 Phone Number
               </label>
               <input
@@ -194,14 +195,14 @@ const Signup = () => {
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your 10-digit phone number"
               />
             </div>
 
             {/* Address Fields */}
             <div>
-              <label htmlFor="street" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="street" className="block text-sm font-medium text-gray-300">
                 Street
               </label>
               <input
@@ -211,12 +212,12 @@ const Signup = () => {
                 required
                 value={formData.street}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your street address"
               />
             </div>
             <div>
-              <label htmlFor="city" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="city" className="block text-sm font-medium text-gray-300">
                 City
               </label>
               <input
@@ -226,12 +227,12 @@ const Signup = () => {
                 required
                 value={formData.city}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your city"
               />
             </div>
             <div>
-              <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="state" className="block text-sm font-medium text-gray-300">
                 State
               </label>
               <input
@@ -241,12 +242,12 @@ const Signup = () => {
                 required
                 value={formData.state}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your state"
               />
             </div>
             <div>
-              <label htmlFor="pincode" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="pincode" className="block text-sm font-medium text-gray-300">
                 Pincode
               </label>
               <input
@@ -256,12 +257,12 @@ const Signup = () => {
                 required
                 value={formData.pincode}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Enter your 6-digit pincode"
               />
             </div>
             <div>
-              <label htmlFor="landmark" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="landmark" className="block text-sm font-medium text-gray-300">
                 Landmark (optional)
               </label>
               <input
@@ -270,14 +271,14 @@ const Signup = () => {
                 type="text"
                 value={formData.landmark}
                 onChange={handleChange}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-600 rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                 placeholder="Landmark (optional)"
               />
             </div>
 
             {/* Password Fields */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                 Password
               </label>
               <div className="relative">
@@ -290,8 +291,8 @@ const Signup = () => {
                   value={formData.password}
                   onChange={handleChange}
                   className={`mt-1 appearance-none relative block w-full px-3 py-2 border ${
-                    passwordError ? 'border-red-300' : 'border-gray-300'
-                  } rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm pr-10`}
+                    passwordError ? 'border-red-500' : 'border-gray-600'
+                  } rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm pr-10`}
                   placeholder="Create a password (min 8 characters)"
                   minLength="8"
                 />
@@ -308,16 +309,16 @@ const Signup = () => {
                 </button>
               </div>
               {passwordError ? (
-                <p className="mt-1 text-sm text-red-600">{passwordError}</p>
+                <p className="mt-1 text-sm text-red-400">{passwordError}</p>
               ) : (
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-gray-400">
                   Password must be at least 8 characters long
                 </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300">
                 Confirm Password
               </label>
               <div className="relative">
@@ -330,8 +331,8 @@ const Signup = () => {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   className={`mt-1 appearance-none relative block w-full px-3 py-2 border ${
-                    passwordError ? 'border-red-300' : 'border-gray-300'
-                  } rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm pr-10`}
+                    passwordError ? 'border-red-500' : 'border-gray-600'
+                  } rounded-md placeholder-gray-400 text-gray-100 bg-gray-800 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm pr-10`}
                   placeholder="Confirm your password (min 8 characters)"
                   minLength="8"
                 />
@@ -347,7 +348,7 @@ const Signup = () => {
                   )}
                 </button>
               </div>
-              <p className="mt-1 text-sm text-gray-500">
+              <p className="mt-1 text-sm text-gray-400">
                 Re-enter your password to confirm
               </p>
             </div>
@@ -359,15 +360,15 @@ const Signup = () => {
               name="terms"
               type="checkbox"
               required
-              className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+              className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-600 rounded bg-gray-800"
             />
-            <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
+            <label htmlFor="terms" className="ml-2 block text-sm text-gray-300">
               I agree to the{' '}
-              <Link to="/terms-conditions" className="font-medium text-primary-600 hover:text-primary-500">
+              <Link to="/terms-conditions" className="font-medium text-green-400 hover:text-green-300">
                 Terms of Service
               </Link>{' '}
               and{' '}
-              <Link to="/privacy-policy" className="font-medium text-primary-600 hover:text-primary-500">
+              <Link to="/privacy-policy" className="font-medium text-green-400 hover:text-green-300">
                 Privacy Policy
               </Link>
             </label>
@@ -377,7 +378,7 @@ const Signup = () => {
             <button
               type="submit"
               disabled={loading || !!passwordError}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
             >
               {loading ? (
                 <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
