@@ -3,23 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
+const fs = require('fs');
 const path = require('path');
-
-// Import routes
-const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/users');
-const productRoutes = require('./routes/products');
-const cartRoutes = require('./routes/cart');
-const orderRoutes = require('./routes/orders');
-const paymentRoutes = require('./routes/payment');
-const dashboardRoutes = require('./routes/dashboard');
-const testRoutes = require('./routes/test');
 
 const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: ['https://vin2grow-latest-admin.onrender.com', 'https://vin2grow-latest-frontend.onrender.com'], // Allow both frontend URLs
+  origin: ['https://vin2grow-latest-admin.onrender.com', 'https://vin2grow-latest-frontend.onrender.com'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -30,41 +21,39 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Serve static files from uploads directory
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Create uploads directory if it doesn't exist
-const fs = require('fs');
+// Ensure uploads directory exists
 const uploadsDir = path.join(__dirname, 'uploads');
 const productsDir = path.join(uploadsDir, 'products');
 
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
-}
 if (!fs.existsSync(productsDir)) {
   fs.mkdirSync(productsDir, { recursive: true });
+  fs.chmodSync(productsDir, '755');
 }
 
-// Ensure proper permissions
-fs.chmodSync(uploadsDir, '755');
-fs.chmodSync(productsDir, '755');
+// Serve static files
+app.use('/uploads', express.static(uploadsDir));
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/cart', cartRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/payment', paymentRoutes);
-app.use('/api/dashboard', dashboardRoutes);
-app.use('/api/test', testRoutes);
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/products', require('./routes/products'));
+app.use('/api/cart', require('./routes/cart'));
+app.use('/api/orders', require('./routes/orders'));
+app.use('/api/payment', require('./routes/payment'));
+app.use('/api/dashboard', require('./routes/dashboard'));
+app.use('/api/test', require('./routes/test'));
 
 // Health check route
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Error handling middleware
+// Optional root message
+app.get('/', (req, res) => {
+  res.send('Vin2Grow API is running');
+});
+
+// Error handling
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
@@ -75,18 +64,16 @@ app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-module.exports = app;
+// Start server after MongoDB connects
+const PORT = process.env.PORT || 10000;
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
-    // Start server
-    const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
-  }); 
+  });
